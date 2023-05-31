@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS questions, answers, answers_photos ;
 
   CREATE TABLE IF NOT EXISTS questions (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     product_id INT,
     body TEXT,
     date_written BIGINT,

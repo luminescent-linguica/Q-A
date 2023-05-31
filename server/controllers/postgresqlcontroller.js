@@ -12,6 +12,7 @@ module.exports = {
     }
     postgresqlModel.getQuestions(params)
       .then((result) => {
+        console.log('Get Questions got called')
         const obj = {};
         obj.product_id = params.product_id;
         obj.results = result.rows;
@@ -24,13 +25,15 @@ module.exports = {
   },
 
   getAnswers: (req, res) => {
+    console.log('This is the req', req)
     const params = {
-      question_id: req.query.question_id,
-      page: 1,
-      count: 5
+      question_id: req.params.question_id,
+      page: req.params.page ? req.params.page : 1,
+      count: req.params.count ? req.params.count : 5
     }
     postgresqlModel.getAnswers(params)
       .then((result) => {
+        console.log('Get Answers got called', params)
         const obj = {};
         obj.question = params.question_id;
         obj.page = params.page;
