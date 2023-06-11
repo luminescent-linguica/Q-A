@@ -4,3 +4,4 @@ dist/
 dump/
 LinguicaSQL.pem
 data/
+qna.pgsql

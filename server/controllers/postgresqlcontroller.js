@@ -5,6 +5,7 @@ const postgresqlModel = require('../models/postgresqlModel.js');
 
 module.exports = {
   getQuestions: (req, res) => {
+    console.log('Get Questions got called', req.query)
     const params = {
       product_id: req.query.product_id,
       page: 1,
@@ -12,7 +13,7 @@ module.exports = {
     }
     postgresqlModel.getQuestions(params)
       .then((result) => {
-        console.log('Get Questions got called')
+        console.log('Get Questions got response')
         const obj = {};
         obj.product_id = params.product_id;
         obj.results = result.rows;

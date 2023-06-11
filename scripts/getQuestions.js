@@ -14,7 +14,7 @@ export const options = {
 export default function() {
   const productId = Math.floor(Math.random() * (1000010 - (1000010 - 100001)) + (1000010 - 100001))
 
-  const url = `http://localhost:3000/qa/questions?product_id=${productId}`
+  const url = `/qa/questions?product_id=${productId}`
   const response = http.get(url);
   sleep(1);
 }
